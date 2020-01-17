@@ -37,11 +37,11 @@ Exemplo:  http://localhost:8080/cliente
 Exemplo: http://localhost:8080/cliente
 
 #### 4.3 **GET** - PESQUISAR POR ID DO CLIENTE 
-Exemplo: http://localhost:8080/cliente/**1**
+Exemplo: http://localhost:8080/cliente/1
 #### 4.4 **GET** - PESQUISAR CLIENTE COM PAGINAÇÃO
 Exemplo: http://localhost:8080/cliente/lazy e passar valores inteiros para os parametros page e size, onde page é o número da página e size é quantos cliente serão exibido por página.
    #### 4.5 **PUT** - EDIÇÃO DO CLIENTE
-Exemplo: http://localhost:8080/cliente/**1**
+Exemplo: http://localhost:8080/cliente/1
 {
     "nome": "MARIA TESTE",
     "foneMovel": "(71) 9000-0002",
@@ -62,7 +62,7 @@ Exemplo: http://localhost:8080/cliente/**1**
     ]
 }
 #### 4.6 **DELETE** - EXCLUSÃO DO CLIENTE
-Exemplo: http://localhost:8080/cliente/**15** e o cliente com id 15 será excluído.
+Exemplo: http://localhost:8080/cliente/15 e o cliente com id 15 será excluído.
 
 **Observação:** na raiz do projeto encontra-se o arquivo Testes.postman_collection.json para importação no Postman para testar o endpointes.
 
