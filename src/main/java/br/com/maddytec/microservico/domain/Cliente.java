@@ -1,6 +1,7 @@
 package br.com.maddytec.microservico.domain;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,10 +13,15 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
+import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -57,10 +63,16 @@ public class Cliente implements Serializable {
 	private String email;
 
 	@NotBlank
-	@Size(max = 14)
-	@Column(name = "doc_receita_federal", nullable = false, length = 14)
-	private String documentoReceitaFederal;
+	@Size(max = 11)
+	@Column(name = "cpf", nullable = false, length = 11)
+	private String cpf;
 
+	@NotNull
+	@JsonDeserialize(using = LocalDateDeserializer.class)  
+	@JsonSerialize(using = LocalDateSerializer.class)  
+	@Column(name = "data_nascimento", nullable = false)
+	private LocalDate dataNascimento;
+	
 	@Builder.Default
 	@JsonManagedReference
 	@OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL)
