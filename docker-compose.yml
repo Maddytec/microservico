@@ -1,0 +1,14 @@
+# Postgres para exemplo do micro servico
+version: '3'
+
+services:
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_DB: microservicodb
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: "123456"
+    ports:
+      - "5432:5432"
+    volumes:
+      - /home/Docker-Compose/PostgreSQL:/var/lib/postgresql/data
