@@ -64,7 +64,7 @@ Exemplo: http://localhost:8080/cliente/1
 #### 4.6 **DELETE** - EXCLUSÃO DO CLIENTE
 Exemplo: http://localhost:8080/cliente/15 e o cliente com id 15 será excluído.
 
-**Observação:** na raiz do projeto encontra-se o arquivo Testes.postman_collection.json para importação no Postman para testar o endpointes.
+**Observação:** na raiz do projeto encontra-se o arquivo Testes.postman_collection.json para importação no Postman para testar os endpointes.
 
 ## 5. License
 Este código é open source.
