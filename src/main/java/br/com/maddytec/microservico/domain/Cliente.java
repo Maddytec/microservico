@@ -59,12 +59,12 @@ public class Cliente implements Serializable {
 	private String foneFixo;
 
 	@Size(max = 255)
-	@Column(name = "email", length = 255)
+	@Column(name = "email", length = 255, unique = true)
 	private String email;
 
 	@NotBlank
 	@Size(max = 11)
-	@Column(name = "cpf", nullable = false, length = 11)
+	@Column(name = "cpf", nullable = false, length = 11, unique = true)
 	private String cpf;
 
 	@NotNull

@@ -34,7 +34,7 @@ public class ClienteDTO {
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
 	private LocalDate dataNascimento;
 	
-	@CPF
+	@CPF(message = "CPF inválido")
 	private String cpf;
 	
 	@Builder.Default
